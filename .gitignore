@@ -119,3 +119,10 @@ _[Ss]cripts
 x64/
 /obj/x64/Debug/*.txt
 *.txt
+*.dll
+*.pdb
+BlazorDemo/BlazorDemo/obj/Debug/net5.0/BlazorDemo.csproj.FileListAbsolute.txt
+*.cache
+*.sln
+*.v2
+*.suo
