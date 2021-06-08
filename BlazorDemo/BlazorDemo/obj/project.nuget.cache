@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UHhDIOsqGSUkGbrk4Ze60jTqiPjWa5i699eL1f4opvEEF1KWTIXzenBlUGxoZ2rM4vKZRcCZhqJxn3jwtfvQBg==",
+  "dgSpecHash": "B+vSz7C9FDSiy3xoutacjz+5TgWOoG8Lk9xehouB+4Im4a0Z9P11vqrTZHdBbIIcCwMwD5Jup6U3vFnAwsAcIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BurakOzcelik\\repositories\\BlazorDemo\\BlazorDemo\\BlazorDemo.csproj",
+  "projectFilePath": "C:\\Users\\BurakOzcelik\\repositories\\Blazorise\\BlazorDemo\\BlazorDemo\\BlazorDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BurakOzcelik\\.nuget\\packages\\blazorise\\0.9.0\\blazorise.0.9.0.nupkg.sha512",
     "C:\\Users\\BurakOzcelik\\.nuget\\packages\\blazorise.bootstrap\\0.9.0\\blazorise.bootstrap.0.9.0.nupkg.sha512",

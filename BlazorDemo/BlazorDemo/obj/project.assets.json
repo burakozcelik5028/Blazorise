@@ -491,11 +491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BurakOzcelik\\repositories\\BlazorDemo\\BlazorDemo\\BlazorDemo.csproj",
+      "projectUniqueName": "C:\\Users\\BurakOzcelik\\repositories\\Blazorise\\BlazorDemo\\BlazorDemo\\BlazorDemo.csproj",
       "projectName": "BlazorDemo",
-      "projectPath": "C:\\Users\\BurakOzcelik\\repositories\\BlazorDemo\\BlazorDemo\\BlazorDemo.csproj",
+      "projectPath": "C:\\Users\\BurakOzcelik\\repositories\\Blazorise\\BlazorDemo\\BlazorDemo\\BlazorDemo.csproj",
       "packagesPath": "C:\\Users\\BurakOzcelik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BurakOzcelik\\repositories\\BlazorDemo\\BlazorDemo\\obj\\",
+      "outputPath": "C:\\Users\\BurakOzcelik\\repositories\\Blazorise\\BlazorDemo\\BlazorDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
