@@ -1,8 +1,55 @@
 ﻿@page "/product"
 <h3>Product</h3>
 
-    
+<div class="col-md-3">
+    <div>
+        <Select TValue="int" SelectedValue="@selectedValue" SelectedValueChanged="@OnSelectedValueChanged" Float="Float.Left">
+            <SelectItem Value="1">1</SelectItem>
+            <SelectItem Value="2">2</SelectItem>
+            <SelectItem Value="3">3</SelectItem>
+            <SelectItem Value="4">4</SelectItem>
+        </Select>
+    </div>
+    <br /> <br /> <br />
+    <div>
+        <Select TValue="int" SelectedValue="@selectedValue1" SelectedValueChanged="@OnSelectedValueChanged1" Float="Float.None">
+            <SelectItem Value="1">1</SelectItem>
+            <SelectItem Value="2">2</SelectItem>
+            <SelectItem Value="3">3</SelectItem>
+            <SelectItem Value="4">4</SelectItem>
+        </Select>
+    </div>
+    <br />
+    <div>
+        <Select TValue="int" SelectedValue="@selectedValue2" SelectedValueChanged="@OnSelectedValueChanged2" Float="Float.Right">
+            <SelectItem Value="1">1</SelectItem>
+            <SelectItem Value="2">2</SelectItem>
+            <SelectItem Value="3">3</SelectItem>
+            <SelectItem Value="4">4</SelectItem>
+        </Select>
+    </div>
 
-@code {
+</div>
 
+
+@code{
+    int selectedValue;
+    int selectedValue1;
+    int selectedValue2;
+
+    void OnSelectedValueChanged(int value)
+    {
+        selectedValue = value;
+        Console.WriteLine(selectedValue);
+    }
+    void OnSelectedValueChanged1(int value)
+    {
+        selectedValue1 = value;
+        Console.WriteLine(selectedValue1);
+    }
+    void OnSelectedValueChanged2(int value)
+    {
+        selectedValue2 = value;
+        Console.WriteLine(selectedValue2);
+    }
 }
