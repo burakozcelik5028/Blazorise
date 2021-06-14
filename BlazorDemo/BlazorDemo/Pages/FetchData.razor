@@ -13,25 +13,67 @@
 }
 else
 {
-<DataGrid TItem="WeatherForecast" Data="@forecasts" Sortable="true" Editable="true" ShowPager="true" PageSize="5" Filterable="true">
+<DataGrid TItem="WeatherForecast" Data="@forecasts" Sortable="true"
+          Editable="true" ShowPager="true" PageSize="5" Filterable="true"
+          UseInternalEditing="true" EditMode="DataGridEditMode.Inline"
+          RowUpdated="@OnRowUpdated" RowInserted="@OnRowInserted"
+          RowRemoved="@OnRowRemoved" Striped="true" Bordered="true" Hoverable="true">
     <DataGridCommandColumn TItem="WeatherForecast">
         <NewCommandTemplate>
             <Blazorise.Button Color="Color.Success" Clicked="@context.Clicked">New</Blazorise.Button>
         </NewCommandTemplate>
+        <EditCommandTemplate>
+            <Blazorise.Button Color="Color.Primary" Clicked="@context.Clicked">Edit</Blazorise.Button>
+        </EditCommandTemplate>
+        <DeleteCommandTemplate>
+            <Blazorise.Button Color="Color.Danger" Clicked="@context.Clicked">Delete</Blazorise.Button>
+        </DeleteCommandTemplate>
+        <CancelCommandTemplate>
+            <Blazorise.Button Color="Color.Secondary" Clicked="@context.Clicked">Cancel</Blazorise.Button>
+        </CancelCommandTemplate>
+        <ClearFilterCommandTemplate>
+            <Blazorise.Button Color="Color.Info" Clicked="@context.Clicked">Clear</Blazorise.Button>
+        </ClearFilterCommandTemplate>
     </DataGridCommandColumn>
 
-    <DataGridColumn TItem="WeatherForecast" Field="@nameof(WeatherForecast.Date)" Caption="Date" Editable="true"></DataGridColumn>
-    <DataGridColumn TItem="WeatherForecast" Field="@nameof(WeatherForecast.TemperatureC)" Caption="Temp(C)" Editable="true"></DataGridColumn>
+    <DataGridDateColumn TItem="WeatherForecast" Field="@nameof(WeatherForecast.Date)" Caption="Date" Editable="true"></DataGridDateColumn>
+    <DataGridNumericColumn TItem="WeatherForecast" Field="@nameof(WeatherForecast.TemperatureC)" Caption="Temp(C)" Editable="true"></DataGridNumericColumn>
     <DataGridColumn TItem="WeatherForecast" Field="@nameof(WeatherForecast.TemperatureF)" Caption="Temp(F)" Editable="true"></DataGridColumn>
     <DataGridColumn TItem="WeatherForecast" Field="@nameof(WeatherForecast.Summary)" Caption="Summary" Editable="true"></DataGridColumn>
 </DataGrid>
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private List<WeatherForecast> forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        forecasts = await ForecastService.GetForecastAsync();
+    }
+
+    void OnNewItemDefaultSetter(WeatherForecast forecast)
+    {
+        forecast.Date = DateTime.Now;
+        StateHasChanged();
+    }
+
+    async Task OnRowInserted(SavedRowItem<WeatherForecast, Dictionary<string, object>> e) {
+        var weatherForecast = e.Item;
+        await ForecastService.SaveForeCast(weatherForecast);
+        forecasts = await ForecastService.GetForecastAsync();
+        StateHasChanged();
+    }
+
+    async Task OnRowUpdated(SavedRowItem<WeatherForecast, Dictionary<string, object>> e) {
+        var weatherForecast = e.Item;
+        await ForecastService.UpdateForeCast(weatherForecast);
+        forecasts = await ForecastService.GetForecastAsync();
+        StateHasChanged();
+    }
+
+    async Task OnRowRemoved(WeatherForecast forecast) {
+        await ForecastService.DeleteForeCast(forecast.Id);
+        forecasts = await ForecastService.GetForecastAsync();
+        StateHasChanged();
     }
 }

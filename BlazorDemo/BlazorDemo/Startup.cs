@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorDemo
 {
@@ -31,12 +32,14 @@ namespace BlazorDemo
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddScoped<WeatherForecastService>();
 
             services.AddBlazorise(options =>
             {
                 options.ChangeTextOnKeyPress = true;
             }).AddBootstrapProviders().AddFontAwesomeIcons();
+
+            services.AddDbContext<ApplicationDBConnect>(dbContextOption => dbContextOption.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

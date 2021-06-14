@@ -133,13 +133,39 @@ using BlazorDemo.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
+#line 46 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
        
-    private WeatherForecast[] forecasts;
+    private List<WeatherForecast> forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        forecasts = await ForecastService.GetForecastAsync();
+    }
+
+    void OnNewItemDefaultSetter(WeatherForecast forecast)
+    {
+        forecast.Date = DateTime.Now;
+        StateHasChanged();
+    }
+
+    async Task OnRowInserted(SavedRowItem<WeatherForecast, Dictionary<string, object>> e) {
+        var weatherForecast = e.Item;
+        await ForecastService.SaveForeCast(weatherForecast);
+        forecasts = await ForecastService.GetForecastAsync();
+        StateHasChanged();
+    }
+
+    async Task OnRowUpdated(SavedRowItem<WeatherForecast, Dictionary<string, object>> e) {
+        var weatherForecast = e.Item;
+        await ForecastService.UpdateForeCast(weatherForecast);
+        forecasts = await ForecastService.GetForecastAsync();
+        StateHasChanged();
+    }
+
+    async Task OnRowRemoved(WeatherForecast forecast) {
+        await ForecastService.DeleteForeCast(forecast.Id);
+        forecasts = await ForecastService.GetForecastAsync();
+        StateHasChanged();
     }
 
 #line default
