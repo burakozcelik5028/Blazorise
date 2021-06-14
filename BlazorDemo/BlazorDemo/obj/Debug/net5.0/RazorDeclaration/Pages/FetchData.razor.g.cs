@@ -97,13 +97,6 @@ using Blazorise.Bootstrap;
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\_Imports.razor"
-using Blazorise.DataGrid;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 14 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\_Imports.razor"
 using Blazorise.DataGrid.Utils;
 
@@ -113,6 +106,13 @@ using Blazorise.DataGrid.Utils;
 #nullable restore
 #line 15 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\_Imports.razor"
 using Blazorise.Icons.FontAwesome;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
+using Blazorise.DataGrid;
 
 #line default
 #line hidden
@@ -133,7 +133,7 @@ using BlazorDemo.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
+#line 24 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
        
     private WeatherForecast[] forecasts;
 
