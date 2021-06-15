@@ -1,43 +1,215 @@
 ﻿@page "/product"
 <h3>Product</h3>
 
-<div class="col-md-3">
-    <div>
-        <Select TValue="int" SelectedValue="@selectedValue" SelectedValueChanged="@OnSelectedValueChanged" Float="Float.Left">
-            <SelectItem Value="1">1</SelectItem>
-            <SelectItem Value="2">2</SelectItem>
-            <SelectItem Value="3">3</SelectItem>
-            <SelectItem Value="4">4</SelectItem>
-        </Select>
-    </div>
-    <br /> <br /> <br />
-    <div>
-        <Select TValue="int" SelectedValue="@selectedValue1" SelectedValueChanged="@OnSelectedValueChanged1" Float="Float.None">
-            <SelectItem Value="1">1</SelectItem>
-            <SelectItem Value="2">2</SelectItem>
-            <SelectItem Value="3">3</SelectItem>
-            <SelectItem Value="4">4</SelectItem>
-        </Select>
-    </div>
-    <br />
-    <div>
-        <Select TValue="int" SelectedValue="@selectedValue2" SelectedValueChanged="@OnSelectedValueChanged2" Float="Float.Right">
-            <SelectItem Value="1">1</SelectItem>
-            <SelectItem Value="2">2</SelectItem>
-            <SelectItem Value="3">3</SelectItem>
-            <SelectItem Value="4">4</SelectItem>
-        </Select>
+<div class="blueBack">
+    <div class="col-md-3 div">
+        <div>
+            Ürün Durumu
+            <div>
+                <Select TValue="string" SelectedValue="@productionStatus" Float="Float.Left">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+
+        <br /> <br /> <br />
+        <div>
+            Organizasyon
+            <div>
+                <Select TValue="string" SelectedValue="@organization" Float="Float.None">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+
+        <br />
+        <div>
+            Sipariş Adı
+            <div>
+                <Validation UsePattern="true">
+                    <TextEdit Pattern="[A-Za-z]{3}">
+                        <Feedback>
+                            @*<ValidationError>Pattern does not match!</ValidationError>*@
+                        </Feedback>
+                    </TextEdit>
+                </Validation>
+            </div>
+        </div>
+
+        <br />
+        <div>
+            Sipariş Geliş Tarihi
+            <div>
+                <Select TValue="DateTime?" SelectedValue="@orderDate" Float="Float.Right">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+        <br /><br /><br />
+
+        <div>
+            Başlangıç Tarihi
+            <div>
+                <Select TValue="DateTime?" SelectedValue="@productionStartDate" Float="Float.Right">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+        <br />
+
     </div>
 
+
+    <div class="col-md-3 div">
+
+        <div>
+            Ürün Tipi
+            <div>
+                <Select TValue="string" SelectedValue="@productType" Float="Float.Left">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+
+        <br /> <br /> <br />
+        <div>
+            Müşteri
+            <div>
+                <Select TValue="string" SelectedValue="@customer" Float="Float.None">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+
+        <br />
+        <div>
+            Toplam Ürün Adedi
+            <div>
+                <NumericEdit TValue="int?" />
+            </div>
+        </div>
+
+        <br /><br />
+        <div>
+            <div>
+                <Select TValue="DateTime?" SelectedValue="@expectedStartDate" Float="Float.Right">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+        <br /><br /><br />
+
+        <div>
+            Tamamlanma Tarihi
+            <div>
+                <Select TValue="DateTime?" SelectedValue="@completeDate" Float="Float.Right">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+        <br />
+
+    </div>
+
+    <div class="col-md-3 div">
+
+        <div>
+            Sayaç Tipi
+            <div>
+                <Select TValue="string" SelectedValue="@detailedProductType" Float="Float.Left">
+                    <SelectItem Value="1">1</SelectItem>
+                    <SelectItem Value="2">2</SelectItem>
+                    <SelectItem Value="3">3</SelectItem>
+                    <SelectItem Value="4">4</SelectItem>
+                </Select>
+            </div>
+        </div>
+
+        <br /> <br /> <br />
+        <div>
+            IFS No
+            <div>
+                <Validation UsePattern="true">
+                    <TextEdit Pattern="[A-Za-z]{3}">
+                    </TextEdit>
+                </Validation>
+            </div>
+        </div>
+
+        <br />
+        <div>
+            Başlangıç
+            <div>
+                <DateEdit TValue="DateTime?" Date="@startDate" DateChanged="@OnDateChanged" /> />
+            </div>
+        </div>
+
+        <div>
+            Bitiş
+            <div>
+                <DateEdit TValue="DateTime?" Date="@endDate" DateChanged="@OnDateChanged" /> />
+            </div>
+        </div>
+
+        <div>
+            Sevk Tarihi
+            <div>
+                <Select TValue="DateTime?" SelectedValue="@shipmentDate" Float="Float.Right">
+                    <SelectItem Value=DateTime.Now>1</SelectItem>
+                </Select>
+            </div>
+        </div>
+        <br />
+
+    </div>
 </div>
 
 
+
 @code{
-    int selectedValue;
+    string selectedValue;
     int selectedValue1;
     int selectedValue2;
+    DateTime? selectedDate;
+    string productionStatus;
+    string organization;
+    string orderName;
+    DateTime? orderDate;
+    DateTime? productionStartDate;
+    string productType;
+    string customer; //organization
+    DateTime? expectedStartDate;
+    DateTime? completeDate;
+    string detailedProductType;
+    DateTime? startDate;
+    DateTime? endDate;
+    DateTime? shipmentDate;
 
-    void OnSelectedValueChanged(int value)
+    void OnSelectedValueChanged(string value)
     {
         selectedValue = value;
         Console.WriteLine(selectedValue);
@@ -51,5 +223,9 @@
     {
         selectedValue2 = value;
         Console.WriteLine(selectedValue2);
+    }
+    void OnDateChanged(DateTime? date)
+    {
+        selectedDate = date;
     }
 }

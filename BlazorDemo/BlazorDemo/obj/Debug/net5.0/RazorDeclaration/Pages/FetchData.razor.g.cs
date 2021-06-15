@@ -133,7 +133,7 @@ using BlazorDemo.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
+#line 30 "C:\Users\BurakOzcelik\repositories\Blazorise\BlazorDemo\BlazorDemo\Pages\FetchData.razor"
        
     private WeatherForecast[] forecasts;
 
