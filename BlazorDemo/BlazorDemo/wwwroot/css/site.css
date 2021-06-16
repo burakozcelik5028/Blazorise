@@ -39,8 +39,19 @@ a, .btn-link {
     color: #FFF;
 }
 
-.blueBack {
+.blueBackg {
     background-color: lightblue;
+    width: 850px;
+    height: 550px;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+}
+
+.nextbutton1 {
+    position: absolute;
+    top: 450px;
+    left: 750px;
 }
 
 #blazor-error-ui {
