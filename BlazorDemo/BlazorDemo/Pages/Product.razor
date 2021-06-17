@@ -5,7 +5,7 @@
     <div class="blueBackg">
         <div class="col-md-3 div">
             <div>
-                Ürün Durumu
+                <FieldLabel Class="blackText">Ürün Durumu</FieldLabel>
                 <div>
                     <Select TValue="string" SelectedValue="@productionStatus" Float="Float.Left">
                         <SelectItem Value="1">1</SelectItem>
@@ -18,7 +18,7 @@
 
             <br /> <br /> <br />
             <div>
-                Organizasyon
+                <FieldLabel Class="blackText">Organizasyon</FieldLabel>
                 <div>
                     <Select TValue="string" SelectedValue="@organization" Float="Float.None">
                         <SelectItem Value="1">1</SelectItem>
@@ -31,7 +31,7 @@
 
             <br />
             <div>
-                Sipariş Adı
+                <FieldLabel Class="blackText">Sipariş Adı</FieldLabel>
                 <div>
                     <Validation UsePattern="true">
                         <TextEdit Pattern="[A-Za-z]{3}">
@@ -45,7 +45,7 @@
 
             <br />
             <div>
-                Sipariş Geliş Tarihi
+                <FieldLabel Class="blackText">Sipariş Geliş Tarihi</FieldLabel>
                 <div>
                     <Select TValue="DateTime?" SelectedValue="@orderDate" Float="Float.Right">
                         <SelectItem Value="1">1</SelectItem>
@@ -58,7 +58,7 @@
             <br /><br /><br />
 
             <div>
-                Başlangıç Tarihi
+                <FieldLabel Class="blackText">Başlangıç Tarihi</FieldLabel>
                 <div>
                     <Select TValue="DateTime?" SelectedValue="@productionStartDate" Float="Float.Right">
                         <SelectItem Value="1">1</SelectItem>
@@ -76,7 +76,7 @@
         <div class="col-md-3 div">
 
             <div>
-                Ürün Tipi
+                <FieldLabel Class="blackText">Ürün Tipi</FieldLabel>
                 <div>
                     <Select TValue="string" SelectedValue="@productType" Float="Float.Left">
                         <SelectItem Value="1">1</SelectItem>
@@ -89,7 +89,7 @@
 
             <br /> <br /> <br />
             <div>
-                Müşteri
+                <FieldLabel Class="blackText">Müşteri</FieldLabel>
                 <div>
                     <Select TValue="string" SelectedValue="@customer" Float="Float.None">
                         <SelectItem Value="1">1</SelectItem>
@@ -102,7 +102,7 @@
 
             <br />
             <div>
-                Toplam Ürün Adedi
+                <FieldLabel Class="blackText">Toplam Ürün Adedi</FieldLabel>
                 <div>
                     <NumericEdit TValue="int?" />
                 </div>
@@ -110,7 +110,7 @@
 
             <br />
             <div>
-                Beklenen Başlama Tarihi
+                <FieldLabel Class="blackText">Beklenen Başlama Tarihi</FieldLabel>
                 <div>
                     <Select TValue="DateTime?" SelectedValue="@expectedStartDate" Float="Float.Right">
                         <SelectItem Value="1">1</SelectItem>
@@ -123,7 +123,7 @@
             <br /><br /><br />
 
             <div>
-                Tamamlanma Tarihi
+                <FieldLabel Class="blackText">Tamamlanma Tarihi</FieldLabel>
                 <div>
                     <Select TValue="DateTime?" SelectedValue="@completeDate" Float="Float.Right">
                         <SelectItem Value="1">1</SelectItem>
@@ -140,7 +140,7 @@
         <div class="col-md-3 div">
 
             <div>
-                Sayaç Tipi
+                <FieldLabel Class="blackText">Sayaç Tipi</FieldLabel>
                 <div>
                     <Select TValue="string" SelectedValue="@detailedProductType" Float="Float.Left">
                         <SelectItem Value="1">1</SelectItem>
@@ -153,7 +153,7 @@
 
             <br /> <br /> <br />
             <div>
-                IFS No
+                <FieldLabel Class="blackText">IFS No</FieldLabel>
                 <div>
                     <Validation UsePattern="true">
                         <TextEdit Pattern="[A-Za-z]{3}">
@@ -164,21 +164,21 @@
 
             <br />
             <div>
-                Başlangıç
+                <FieldLabel Class="blackText">Başlangıç</FieldLabel>
                 <div>
                     <DateEdit TValue="DateTime?" Date="@startDate" />
                 </div>
             </div>
             <br />
             <div>
-                Bitiş
+                <FieldLabel Class="blackText"> Bitiş </FieldLabel>
                 <div>
                     <DateEdit TValue="DateTime?" Date="@endDate" />
                 </div>
             </div>
             <br />
             <div>
-                Sevk Tarihi
+                <FieldLabel Class="blackText">Sevk Tarihi</FieldLabel>
                 <div>
                     <Select TValue="DateTime?" SelectedValue="@shipmentDate" Float="Float.Right">
                         <SelectItem Value=DateTime.Now>1</SelectItem>

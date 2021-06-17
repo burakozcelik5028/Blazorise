@@ -40,7 +40,7 @@ a, .btn-link {
 }
 
 .blueBackg {
-    background-color: lightblue;
+    background-color: LightGray;
     width: 850px;
     height: 550px;
     position: absolute;
@@ -52,6 +52,10 @@ a, .btn-link {
     position: absolute;
     top: 450px;
     left: 750px;
+}
+
+.blackText {
+    color: black;
 }
 
 #blazor-error-ui {
@@ -66,9 +70,9 @@ a, .btn-link {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
